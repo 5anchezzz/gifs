@@ -16,9 +16,9 @@ class GifsController < ApplicationController
   end
 
   def random
-    @gif = Gif.tagged_with(params[:tag]).random
-    @gif ||= Gif.random
-    render :show
+    @gifs = Gif.tagged_with(params[:tag])
+    #@gif ||= Gif.random
+    render :index
   end
 
 
