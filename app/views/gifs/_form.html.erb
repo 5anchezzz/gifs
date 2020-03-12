@@ -17,6 +17,9 @@
     <% else %>
         <%= form.label :image %>
         <%= form.hidden_field :image, value: form.object.cached_image_data %>
+        <%= form.text_field :image_remote_url, placeholder: "URL to gif", class: "form-control" %>
+
+        <%= form.label :image, "or upload a gif" %>
         <%= form.file_field :image, class: "form-control" %>
       <% end %>
   </div>
