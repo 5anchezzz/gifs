@@ -6,6 +6,8 @@ class Gif < ApplicationRecord
 
   scope :sorted, -> { order(created_at: :desc)}
 
+  validates :image_data, presence: true
+
   def self.random
     order("RANDOM()").first
   end
