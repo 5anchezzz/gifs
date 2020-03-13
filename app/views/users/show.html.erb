@@ -1,7 +1,15 @@
 <div class="container mx-auto">
-  <h1 class="text-2xl text-center"><%= @user.name %>'s GIFs</h1>
+
+  <div class="bg-green-100 border-t border-b border-green-500 text-green-700 px-4 py-3 my-8" role="alert">
+    <p class="font-bold text-2xl text-center"><%= @user.name %>'s GIFs</p>
+  </div>
+
   <div class="flex flex-wrap justify-center">
     <%= render @gifs %>
+  </div>
+
+  <div class="container mx-auto  mt-10 flex flex-wrap justify-center">
+    <%== pagy_nav(@pagy) %>
   </div>
 
 </div>

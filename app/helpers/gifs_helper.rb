@@ -1,4 +1,5 @@
 module GifsHelper
+  include Pagy::Frontend
 
   def linked_tag_list(gif)
     list = gif.tags.map do |tag|

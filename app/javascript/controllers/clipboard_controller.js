@@ -7,12 +7,12 @@ export default class extends Controller {
     this.sourceTarget.select()
     document.execCommand("copy")
 
-    this.buttonTarget.textContent = "Copied"
+    this.buttonTarget.textContent = "Done"
 
 
     clearTimeout(this.timeout)
     this.timeout = setTimeout(()=> {
       this.buttonTarget.textContent = "Copy"
-    }, 300)
+    }, 350)
   }
 }

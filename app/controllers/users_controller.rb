@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @gifs = @user.gifs.includes(:tags, :user).sorted
+    @pagy, @gifs = pagy(@user.gifs.includes(:tags, :user).sorted, items: 8)
   end
 
   private

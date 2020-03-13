@@ -6,7 +6,7 @@ class GifsController < ApplicationController
   # GET /gifs
   # GET /gifs.json
   def index
-    @gifs = Gif.includes(:tags, :user).sorted
+    @pagy, @gifs = pagy(Gif.includes(:tags, :user).sorted, items: 8)
   end
 
   # GET /gifs/1
@@ -16,7 +16,7 @@ class GifsController < ApplicationController
   end
 
   def random
-    @gifs = Gif.tagged_with(params[:tag])
+    @pagy, @gifs = pagy(Gif.tagged_with(params[:tag]), items: 8)
     #@gif ||= Gif.random
     render :index
   end
